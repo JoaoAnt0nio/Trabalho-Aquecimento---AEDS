@@ -30,7 +30,7 @@ A lógica da movimentação do animal é baseada em Algoritmo Guloso utilizando 
 ### Busca Local Gulosa
 
 Na movimentação do animal foi implementada uma espécie de busca local baseada em Algoritmo Guloso, onde as celulas adjacentes ao animal são conferidas, armazenadas e então é tomado o primeiro movimento armazenado como o que será utilizado. Essa seleção de movimentos possíveis é feita com base nas prioridades 
-definidas no documento 'pratica.pdf'.
+definidas no documento '[pratica.pdf](./pratica.pdf)'.
 
 ### Vizinhança de Von Neumann
 
