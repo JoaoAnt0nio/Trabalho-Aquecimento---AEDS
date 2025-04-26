@@ -65,10 +65,9 @@ flowchart TD
 ```
 
 
-### Leitura de Arquivo
+### Leitura da Matriz a Partir do Input
 
-O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida, e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois fors geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes posInicialAnimalX e posInicialAnimalY.  
-[Função que lê o arquivo](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Floresta.cpp#L30)
+O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida, e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois fors geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes posInicialAnimalX e posInicialAnimalY. Função que lê a matriz: [`LerMatriz`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Floresta.cpp#L30)
 
 
 ### Movimentação do Animal
