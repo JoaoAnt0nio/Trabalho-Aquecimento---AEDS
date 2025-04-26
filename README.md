@@ -55,6 +55,14 @@ O algoritmo verifica as células adjacentes e toma a decisão de se movimentar c
   
 *2 -* Caminho inseguro é uma celula de valor 2 (árvore em chamas) que não deve ser visitada.
 
+| Tipo de célula | Valor            | Prioridade |
+|------------------|------------------------|-------------|
+| Água | 4  | 1(melhor)|
+| Espaço vazio | 0 | 2 |
+| Árvores| 1 | 3 |
+| Árvores queimadas| 3 | 4 |
+| Árvores em chamas| 2 | 5(evitado) |
+
 #### Função Mover
 
 A função `Mover` faz o animal se movimentar, escolhendo sempre células 4 ou o primeiro caminho armazenado em caso de células 0, 1 ou 3. Além disso, o animal permanece imóvel por até 3 iterações quando encontra uma célula de valor 0. Esta função
@@ -108,14 +116,14 @@ Os resultados são baseados na seguinte matriz 10x10:
 ```
 ### Primeiro Caso Teste
 
-O primeiro caso teste inicia o foco do incÇendio na posição 5x5 da matriz e o animal inicia na posição 3x3, a iteração final se dá da seguinte maneira:
+O primeiro caso teste inicia o foco do incêndio na posição 5x5 da matriz e o animal inicia na posição 3x3, a iteração final se dá da seguinte maneira:
 
 ```
 Iteração 12:
 
 O animal está parado em uma célula zero
 
-Posição do animal: (0, 3)
+Posição do animal: (0, 4)
 
 2 0 0 1 0 1 0 1 4 1 
 2 3 3 0 3 0 1 1 4 1 
@@ -131,10 +139,81 @@ Posição do animal: (0, 3)
 ---------------------------------------------
 Fogo parou de se propagar na iteração: 12
 
-Número total de passos: 12
+Número total de passos: 3
 
 Simulação terminada porque o fogo não pode mais se propagar.
 ```
+
+### Segundo Caso Teste
+
+O segundo caso teste inicia o foco do incêndio na posição 9x7 da matriz e o animal inicia na posição 0x0, a iteração final se dá da seguinte maneira:
+
+```
+Iteração 16:
+
+Posição do animal: (0, 1)
+
+2 0 0 1 4 1 0 1 4 1 
+2 3 3 4 3 0 1 1 4 1 
+3 3 3 3 3 4 0 1 1 0 
+0 0 3 0 3 3 3 4 1 0 
+3 3 3 3 3 0 0 3 0 4 
+3 3 3 3 4 0 3 3 3 3 
+0 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 4 0 3 4 0 
+0 3 0 0 3 3 0 3 3 0 
+0 3 3 3 3 0 3 3 4 1 
+
+---------------------------------------------
+Fogo parou de se propagar na iteração: 16
+
+Número total de passos: 16
+
+Simulação terminada porque o fogo não pode mais se propagar.
+```
+
+### Terceiro Caso Teste
+
+O terceiro caso teste é um pouco diferente, aqui alterei a matriz inicial e cerquei o animal com celulas em chamas para podermos verificar o comportamento do código quando o animal não não consegue se mover.
+
+Abaixo a matriz alterada, com o foco se iniciando em 0x0 e o animal começando na em 1x1:
+
+```
+1 1 1 1 4 1 0 1 4 1     
+2 1 2 4 1 0 1 1 4 1     
+2 2 2 1 1 4 0 1 1 0     
+0 0 1 0 1 1 1 4 1 0     
+1 1 1 1 1 0 0 1 0 4     
+1 1 1 1 4 0 1 1 1 1     
+0 1 1 1 1 1 1 1 1 1    
+1 1 1 1 1 4 0 1 4 0     
+0 1 0 0 1 1 0 1 1 0     
+0 1 1 1 1 0 1 1 4 1
+```
+Iteração final abaixo:
+
+```
+Iteração 1:
+
+Posição do animal: (0, 1)
+
+2 2 2 1 4 1 0 1 4 1 
+2 2 2 4 1 0 1 1 4 1 
+2 2 2 2 1 4 0 1 1 0 
+0 0 2 0 1 1 1 4 1 0 
+1 1 1 1 1 0 0 1 0 4 
+1 1 1 1 4 0 1 1 1 1 
+0 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 4 0 1 4 0 
+0 1 0 0 1 1 0 1 1 0 
+0 1 1 1 1 0 1 1 4 1 
+
+---------------------------------------------
+Animal ficou sem saída na iteração: 1
+
+Número total de passos: 0
+```
+
 
 
 
