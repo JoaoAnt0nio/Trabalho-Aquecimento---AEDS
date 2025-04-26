@@ -144,7 +144,7 @@ Número total de passos: 3
 Simulação terminada porque o fogo não pode mais se propagar.
 ```
 
-O output completo pode ser visto em [Caso Teste 1](CasosTeste/CasoTeste1.txt)
+O output completo pode ser visto em [Caso Teste 1](CasosTeste/CasoTeste1)
 
 ### Segundo Caso Teste
 
