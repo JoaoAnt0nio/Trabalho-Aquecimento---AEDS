@@ -144,6 +144,8 @@ Número total de passos: 3
 Simulação terminada porque o fogo não pode mais se propagar.
 ```
 
+O output completo pode ser visto em [Caso Teste 1](CasosTeste/Caso-Teste-1.txt)
+
 ### Segundo Caso Teste
 
 O segundo caso teste inicia o foco do incêndio na posição 9x7 da matriz e o animal inicia na posição 0x0, a iteração final se dá da seguinte maneira:
