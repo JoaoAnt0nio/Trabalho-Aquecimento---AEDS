@@ -93,7 +93,7 @@ A função `transformarCelulasAoRedorDaAgua` transforma a célula 4 em 0 e as c�
 
 #### Função Propagar
 
-A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros; após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'. Esta função tem custo computacional **O(n × m)**. Função que propaga o fogo: [`transformarCelulasAoRedorDaAgua`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Fogo.cpp#L30)
+A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros; após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'. Esta função tem custo computacional **O(n × m)**. Função que propaga o fogo: [`propagar`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Fogo.cpp#L7)
 
 ### Configurações 
 
