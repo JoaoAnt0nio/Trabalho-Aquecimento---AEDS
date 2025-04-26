@@ -15,9 +15,11 @@ Este repositório é referente ao trabalho de aquecimento da disciplina <strong>
 
 - [Introdução e Objetivo](#introdução_e_objetivo)
 - [Lógica de Desenvolvimento](#logica_de_desenvolvimento)
-- [Implementação](#implementação)
+- [Implementação](#implementação)  
+      -  [Movimentação do Animal](#movimentacao_do_animal)
 - [Resultado](#resultado)
 - [Compilação](#compilação)
+- [Conclusão](#conclusao)
 
 # Introdução e Objetivo
 
