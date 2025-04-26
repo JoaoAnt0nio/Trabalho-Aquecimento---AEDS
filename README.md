@@ -16,8 +16,7 @@ Este repositório é referente ao trabalho de aquecimento da disciplina <strong>
 - [Introdução e Objetivo](#introdução_e_objetivo)
 - [Lógica de Desenvolvimento](#logica_de_desenvolvimento)
 - [Implementação](#implementação)  
-      -  [Movimentação do Animal](#movimentacao_do_animal)
-- [Resultado](#resultado)
+- [Resultados](#resultado)
 - [Compilação](#compilação)
 - [Conclusão](#conclusao)
 
@@ -82,6 +81,21 @@ bool VENTO_DIREITA = false;
 int dx[] = {config.vento_cima(), config.vento_baixo(), 0, 0};
 int dy[] = {0, 0, config.vento_esquerda(), config.vento_direita()}
 ```
+
+# Resultados
+
+# Compilação
+
+
+Para compilar e rodar o código usando MakeFile, basta seguir os seguintes comandos.
+| Comando                |  Função                                                                                               |                     
+| -----------------------| ------------------------------------------------------------------------------------------------------|
+|  make clean          | Apaga a última compilação realizada contida na pasta build                                            |
+|  make                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build               |
+|  make run            | Executa o programa da pasta build após a realização da compilação                                     |
+|make r| Faz os três processos descritos acima em apenas um comando|
+
+
 
 
 
