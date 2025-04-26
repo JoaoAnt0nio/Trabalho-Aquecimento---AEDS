@@ -43,6 +43,10 @@ A propagação do fogo é baseada na Vizinhança de Von Neumann, que verifica as
 
 Aqui abordaremos as funções e implementações principais do código.
 
+### Leitura de Arquivo
+
+O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida, e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois fors geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes posInicialAnimalX e posInicialAnimalY.
+
 ### Movimentação do Animal
 
 O algoritmo verifica as células adjacentes e toma a decisão de se movimentar com base nas seguintes prioridades:
@@ -85,6 +89,54 @@ int dy[] = {0, 0, config.vento_esquerda(), config.vento_direita()}
 ```
 
 # Resultados
+
+### Matriz Utilizada
+
+Os resultados são baseados na seguinte matriz 10x10:
+
+```
+1 0 0 1 4 1 0 1 4 1     
+1 1 1 4 1 0 1 1 4 1     
+1 1 1 1 1 4 0 1 1 0     
+0 0 1 0 1 1 1 4 1 0     
+1 1 1 1 1 0 0 1 0 4     
+1 1 1 1 4 0 1 1 1 1     
+0 1 1 1 1 1 1 1 1 1    
+1 1 1 1 1 4 0 1 4 0     
+0 1 0 0 1 1 0 1 1 0     
+0 1 1 1 1 0 1 1 4 1
+```
+### Primeiro Caso Teste
+
+O primeiro caso teste inicia o foco do incÇendio na posição 5x5 da matriz e o animal inicia na posição 3x3, a iteração final se dá da seguinte maneira:
+
+```
+Iteração 12:
+
+O animal está parado em uma célula zero
+
+Posição do animal: (0, 3)
+
+2 0 0 1 0 1 0 1 4 1 
+2 3 3 0 3 0 1 1 4 1 
+3 3 3 3 3 4 0 1 1 0 
+0 0 3 0 3 3 3 4 1 0 
+3 3 3 3 3 0 0 3 0 4 
+3 3 3 3 4 3 3 3 3 3 
+0 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 4 0 3 4 0 
+0 3 0 0 3 3 0 3 3 0 
+0 3 3 3 3 0 3 3 4 1 
+
+---------------------------------------------
+Fogo parou de se propagar na iteração: 12
+
+Número total de passos: 12
+
+Simulação terminada porque o fogo não pode mais se propagar.
+```
+
+
 
 # Compilação
 
