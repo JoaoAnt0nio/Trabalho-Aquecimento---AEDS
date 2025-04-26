@@ -13,12 +13,14 @@ Este repositório é referente ao trabalho de aquecimento da disciplina <strong>
 
 # Sumário
 
-- [Introdução e Objetivo](#introdução_e_objetivo)
-- [Lógica de Desenvolvimento](#logica_de_desenvolvimento)
+- [Introdução e Objetivo](#introdução-e-objetivo)
+- [Lógica de Desenvolvimento](#lógica-de-desenvolvimento)
 - [Implementação](#implementação)  
-- [Resultados](#resultado)
+- [Resultados](#resultados)
 - [Compilação](#compilação)
-- [Conclusão](#conclusao)
+- [Conclusão](#conclusão)
+- [Referências](#referências)
+
 
 # Introdução e Objetivo
 
@@ -52,7 +54,7 @@ O algoritmo verifica as células adjacentes e toma a decisão de se movimentar c
 #### Função Mover
 
 A função `Mover` faz o animal se movimentar, escolhendo sempre células 4 ou o primeiro caminho armazenado em caso de células 0, 1 ou 3. Além disso, o animal permanece imóvel por até 3 iterações quando encontra uma célula de valor 0. Esta função
-possui custo computacional O(1), tanto em função de tempo quanto espaço.  
+possui custo computacional **O(1)**. 
 
 #### Função transformarCelulasAoRedorDaAgua
 
@@ -62,7 +64,7 @@ A função `transformarCelulasAoRedorDaAgua` transforma a célula 4 em 0 e as c�
 
 #### Função Propagar
 
-A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros; após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'.
+A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros; após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'. Esta função tem custo computacional **O(n × m)**.
 
 ### Configurações 
 
@@ -94,6 +96,14 @@ Para compilar e rodar o código usando MakeFile, basta seguir os seguintes coman
 |  make                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build               |
 |  make run            | Executa o programa da pasta build após a realização da compilação                                     |
 |make r| Faz os três processos descritos acima em apenas um comando|
+
+# Conclusão
+
+# Referências 
+
+CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. Algoritmos: teoria e prática. 3. ed. Rio de Janeiro: Elsevier, 2012.
+  
+NEUMANN, John von. Theory of Self-Reproducing Automata. Editado e completado por Arthur W. Burks. Urbana: University of Illinois Press, 1966.
 
 
 
