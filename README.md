@@ -87,7 +87,7 @@ possui custo computacional **O(1)**. Função que movimenta o animal: [`Mover`](
 
 #### Função transformarCelulasAoRedorDaAgua
 
-A função `transformarCelulasAoRedorDaAgua` transforma a célula 4 em 0 e as células ortogonais a 4 em 1, baseando-se em 4 'ifs' diferentes que alteram o valor destas células ortogonais. 
+A função `transformarCelulasAoRedorDaAgua` transforma a célula 4 em 0 e as células ortogonais a 4 em 1, baseando-se em 4 'ifs' diferentes que alteram o valor destas células ortogonais. Função que transforma as células ao redor da água: [`transformarCelulasAoRedorDaAgua`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Animal.cpp#L92)
 
 ### Propagaçao do Fogo
 
