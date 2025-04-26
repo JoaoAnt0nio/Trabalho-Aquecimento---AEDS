@@ -67,7 +67,7 @@ flowchart TD
 
 ### Leitura da Matriz a Partir do Input
 
-O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida, e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois fors geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes posInicialAnimalX e posInicialAnimalY. Função que lê a matriz: [`LerMatriz`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Floresta.cpp#L30)
+O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois 'fors' geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes focoInicialX e focoInicialY, enquanto a posição do animal baseia-se nas componentes posInicialAnimalX e posInicialAnimalY. Função que lê a matriz: [`LerMatriz`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Floresta.cpp#L30)
 
 
 ### Movimentação do Animal
@@ -82,7 +82,7 @@ O input possui, em sua primeira linha, o número de linhas e colunas da matriz, 
 
 #### Função Mover
 
-A função `Mover` faz o animal se movimentar, escolhendo sempre células 4 ou o primeiro caminho armazenado em caso de células 0, 1 ou 3. Além disso, o animal permanece imóvel por até 3 iterações quando encontra uma célula de valor 0. Esta função
+A função `Mover` faz o animal se movimentar, escolhendo sempre células 4 ou o primeiro caminho armazenado em caso de células 0 ou 1, escolhendo células do tipo 3 como último caso. Além disso, o animal permanece imóvel por até 3 iterações quando encontra uma célula de valor 0. Esta função
 possui custo computacional **O(1)**. Função que movimenta o animal: [`Mover`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Animal.cpp#L10)
 
 #### Função transformarCelulasAoRedorDaAgua
@@ -93,13 +93,13 @@ A função `transformarCelulasAoRedorDaAgua` transforma a célula 4 em 0 e as c�
 
 #### Função Propagar
 
-A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros; após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'. Esta função tem custo computacional **O(n × m)**. Função que propaga o fogo: [`Propagar`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Fogo.cpp#L7)
+A função `Propagar` percorre a matriz usando dois 'for' simples, identifica células de valor 2 e então verifica ortogonalmente estas células de valor 2; após isso, as células de valor 1 ortogonais a 2 são armazenadas utilizando um vetor de pares inteiros (função `pair`); após serem armazenadas, um contador é atribuido a cada célula separadamente utilizando `map<pair<int, int>, int> contadorQueima`, este contador nos permite transformar as células 1 em 2, e 2 em 3 da maneira solicitada no documento '[pratica.pdf](./pratica.pdf)'. Esta função tem custo computacional **O(n × m)**. Função que propaga o fogo: [`Propagar`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Fogo.cpp#L7)
 
 ### Configurações 
 
 #### Direções do Vento
 
-Foi criado um booleano `COM_VENTO` que, quando ativado nos permite ativar outros 4 booleanos (`VENTO_CIMA`, `VENTO_BAIXO`, `VENTO_DIREITA`, `VENTO_ESQUERDA`), que direcionam a maneira com que o fogo se propaga. Caso ativados, estes booleanos retornam 0 ou um valor especifico. Por exemplo, `VENTO_CIMA` retorna -1 caso ativado e 0 caso desativado.
+Foi criado um booleano `COM_VENTO` que, quando ativado nos permite ativar outros 4 booleanos (`VENTO_CIMA`, `VENTO_BAIXO`, `VENTO_DIREITA`, `VENTO_ESQUERDA`), que direcionam a maneira com que o fogo se propaga. Caso ativados, estes booleanos retornam 0 ou um valor especifico. Por exemplo, `VENTO_CIMA` retorna -1 caso ativado e 0 caso desativado. Classe que configura o vento: [`Config.cpp`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Config.cpp)
 
 ```
 bool COM_VENTO = false;
@@ -109,6 +109,7 @@ bool VENTO_ESQUERDA = false;
 bool VENTO_DIREITA = false;
 ```
 ```
+//Maneira como os booleanos são utilizados para definir a direção do vento//
 int dx[] = {config.vento_cima(), config.vento_baixo(), 0, 0};
 int dy[] = {0, 0, config.vento_esquerda(), config.vento_direita()}
 ```
@@ -250,7 +251,7 @@ Para compilar e rodar o código usando MakeFile, basta seguir os seguintes coman
 |  make clean          | Apaga a última compilação realizada contida na pasta build                                            |
 |  make                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build               |
 |  make run            | Executa o programa da pasta build após a realização da compilação                                     |
-|make r| Faz os três processos descritos acima em apenas um comando|
+
 
 # Conclusão
 
