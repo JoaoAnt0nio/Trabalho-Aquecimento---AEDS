@@ -32,7 +32,7 @@ A lógica da movimentação do animal é baseada em Algoritmo Guloso utilizando 
 
 ### Busca Local Gulosa
 
-Na movimentação do animal foi implementada uma espécie de busca local baseada em Algoritmo Guloso, onde as celulas adjacentes ao animal são conferidas, armazenadas e então é tomado o primeiro movimento armazenado como o que será utilizado. Essa seleção de movimentos possíveis é feita com base nas prioridades 
+Na movimentação do animal foi implementada uma espécie de busca local baseada em Algoritmo Guloso, onde as celulas ortogonais ao animal são conferidas, armazenadas e então é tomado o primeiro movimento armazenado como o que será utilizado. Essa seleção de movimentos possíveis é feita com base nas prioridades 
 definidas no documento '[pratica.pdf](./pratica.pdf)'.
 
 ### Vizinhança de Von Neumann
@@ -71,7 +71,7 @@ O input possui, em sua primeira linha, o número de linhas e colunas da matriz, 
 
 ### Movimentação do Animal
 
-O algoritmo verifica as células adjacentes e toma a decisão de se movimentar com base nas seguintes prioridades:
+O algoritmo verifica as células ortogonaisw e toma a decisão de se movimentar com base nas seguintes prioridades:
 
 *1 -* Caminhos seguros são células de valor 0 (área vazia que não queima), 1 (árvore saudável), 3 (árvore carbonizada) ou 4 (área com presença de água), seguindo a seguinte hierarquia: 4 > 0 || 1 > 3;  
   
@@ -259,11 +259,18 @@ Para compilar e rodar o código usando MakeFile, basta seguir os seguintes coman
 
 # Conclusão
 
+Ao longo do projeto, foi possível modelar a evolução do fogo em uma matriz, incorporando regras de propagação com e sem influência do vento, bem como a movimentação de um animal que busca rotas de fuga seguras. A implementação dessas funcionalidades exigiu uma análise cuidadosa das estruturas de dados mais adequadas, culminando na utilização de matrizes dinâmicas para representar a floresta e variáveis externas para acompanhar a posição do animal. Além disso, o uso de arquivos de configuração (config.hpp) permitiu definir parâmetros globais, garantindo maior flexibilidade na simulação.
+
 # Referências 
 
 CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. Algoritmos: teoria e prática. 3. ed. Rio de Janeiro: Elsevier, 2012.
   
 NEUMANN, John von. Theory of Self-Reproducing Automata. Editado e completado por Arthur W. Burks. Urbana: University of Illinois Press, 1966.
+
+# Autor
+<p>
+  João Antônio Melo Zacarias - Graduando em Engenharia da Computação pelo <a href="https://www.cefetmg.br" target="_blank">CEFET-MG</a>. Contato: (<a href="mailto:joaoantmeloz@gmail.com">joaoantmeloz@gmail.com</a>)
+</p>
 
 
 
