@@ -43,6 +43,28 @@ A propagação do fogo é baseada na Vizinhança de Von Neumann, que verifica as
 
 Aqui abordaremos as funções e implementações principais do código.
 
+## Fluxograma da Simulação
+
+```mermaid
+flowchart TD
+    A[Início do Programa] --> B[Ler arquivo de entrada]
+    B --> C[Inicializar Floresta, Animal, Fogo]
+    C --> D[Abrir arquivo de saída]
+    D --> E[Para cada iteração até MAX_ITERACOES]
+    E --> F{O fogo ainda está ativo?}
+    F -- Não --> G[Fogo terminou] --> Z[Encerrar]
+    F -- Sim --> H{Animal pode se mover?}
+    H -- Não --> I[Animal preso] --> Z
+    H -- Sim --> J[Atualizar posição do animal]
+    J --> K[Salvar estado da floresta]
+    K --> L[Propagar fogo]
+    L --> M[Atualizar células queimadas]
+    M --> E
+    Z --> N[Imprimir total de passos do animal]
+    N --> O[Fim do Programa]
+```
+
+
 ### Leitura de Arquivo
 
 O input possui, em sua primeira linha, o número de linhas e colunas da matriz, onde está o foco inicial do incêndio e a posição inicial do animal. A primeira linha é lida, e seus componentes são armazenados na seguinte ordem: **arquivo > linhas > colunas > focoInicialX > focoInicialY > posInicialAnimalX > posInicialAnimalY**; então dois fors geram a matriz baseados nos componentes linhas e colunas. Após isso, a célula da matriz onde o foco do incêndio se inicia é transformada em 2, baseando-se nas componentes posInicialAnimalX e posInicialAnimalY.
