@@ -116,6 +116,8 @@ Os resultados são baseados na seguinte matriz 10x10:
 ```
 ### Primeiro Caso Teste
 
+O output completo pode ser visto em [Caso Teste 1](CasosTeste/CasoTeste1).
+
 O primeiro caso teste inicia o foco do incêndio na posição 5x5 da matriz e o animal inicia na posição 3x3, a iteração final se dá da seguinte maneira:
 
 ```
@@ -143,10 +145,10 @@ Número total de passos: 3
 
 Simulação terminada porque o fogo não pode mais se propagar.
 ```
-
-O output completo pode ser visto em [Caso Teste 1](CasosTeste/CasoTeste1)
-
 ### Segundo Caso Teste
+
+O output completo pode ser visto em [Caso Teste 2](CasosTeste/CasoTeste2)
+
 
 O segundo caso teste inicia o foco do incêndio na posição 9x7 da matriz e o animal inicia na posição 0x0, a iteração final se dá da seguinte maneira:
 
@@ -175,6 +177,9 @@ Simulação terminada porque o fogo não pode mais se propagar.
 ```
 
 ### Terceiro Caso Teste
+
+O output completo pode ser visto em [Caso Teste 3](CasosTeste/CasoTeste3)
+
 
 O terceiro caso teste é um pouco diferente, aqui alterei a matriz inicial e cerquei o animal com celulas em chamas para podermos verificar o comportamento do código quando o animal não não consegue se mover.
 
