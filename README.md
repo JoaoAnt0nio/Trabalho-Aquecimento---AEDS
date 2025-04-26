@@ -72,12 +72,6 @@ O input possui, em sua primeira linha, o número de linhas e colunas da matriz, 
 
 ### Movimentação do Animal
 
-O algoritmo verifica as células ortogonaisw e toma a decisão de se movimentar com base nas seguintes prioridades:
-
-*1 -* Caminhos seguros são células de valor 0 (área vazia que não queima), 1 (árvore saudável), 3 (árvore carbonizada) ou 4 (área com presença de água), seguindo a seguinte hierarquia: 4 > 0 || 1 > 3;  
-  
-*2 -* Caminho inseguro é uma celula de valor 2 (árvore em chamas) que não deve ser visitada.
-
 | Tipo de célula | Valor            | Prioridade |
 |------------------|------------------------|-------------|
 | Água | 4  | 1(melhor)|
@@ -89,7 +83,7 @@ O algoritmo verifica as células ortogonaisw e toma a decisão de se movimentar 
 #### Função Mover
 
 A função `Mover` faz o animal se movimentar, escolhendo sempre células 4 ou o primeiro caminho armazenado em caso de células 0, 1 ou 3. Além disso, o animal permanece imóvel por até 3 iterações quando encontra uma célula de valor 0. Esta função
-possui custo computacional **O(1)**. 
+possui custo computacional **O(1)**. Função que movimenta o animal: [`Mover`](https://github.com/JoaoAnt0nio/Trabalho-Aquecimento---AEDS/blob/main/Trabalho%20Aquecimento/src/Animal.cpp#L10)
 
 #### Função transformarCelulasAoRedorDaAgua
 
