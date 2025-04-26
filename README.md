@@ -220,9 +220,9 @@ Animal ficou sem saída na iteração: 1
 
 Número total de passos: 0
 ```
+### Análise dos Resultados
 
-
-
+Os resultados expostos indicam que o código cumpre consistentemente os requisitos propostos pelo professor, apresentando sempre o mesmo padrão de propagação e com o animal se movimentando coerentemente de acordo com os requisitos pré-estabelecidos no documento '[pratica.pdf](./pratica.pdf)'. O algoritmo suporta matrizes de tamanhos relevantes, porém inevitavelmente perde desempenho de maneira exponencial à medida que o tamanho das matrizes e o número de iteraçõs aumentam.
 
 # Compilação
 
